@@ -4,6 +4,7 @@
 
 import ui
 import quiz
+import questions
 
 # === default value === #
 
@@ -11,6 +12,7 @@ run = True
 
 # === main loop     === #
 
+questions.load_question()
 while run:
     ui.main_menu()
     select = ui.ask_select(1,2)
