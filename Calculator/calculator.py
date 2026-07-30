@@ -3,6 +3,7 @@
 # === import         === #
 
 from history import History
+import math
 
 # === value          === #
 
@@ -38,6 +39,6 @@ class Calculator:
         return result
 
     def square_root(first):
-        result = first * 0.5
+        result = math.sqrt(first)
         board.history.append(f"√ {first} = {result}")
         return result
