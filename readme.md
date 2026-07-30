@@ -7,6 +7,7 @@ My Python learning projects.
 - Calculator
 - Password Manager
 - File Organizer
+- Quiz Game V1
 
 Language:
 Python
