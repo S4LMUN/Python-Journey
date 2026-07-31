@@ -3,21 +3,27 @@
 # ===      import      === #
 
 import questions
+import random
 import ui
 
 # === default variable === #
 
 score = 0
+incorrect = 0
 total_question = 0
 
 # ===     main func    === #
 
 def start_game():
     global score
+    global incorrect
     global total_question
 
     score = 0
+    incorrect = 0
     total_question = 0
+
+    random.shuffle(questions.questions)
 
     for question in questions.questions:
         total_question += 1
@@ -38,7 +44,12 @@ def start_game():
             correct_answer = question["answer"]
             print("Incorrect")
             print(f"The Answer is {question["choices"][correct_answer - 1]}")
+            incorrect += 1
             continue
 
     print()
-    print(f"Score {score} / {total_question}")
+    percent = (score / total_question) * 100
+    print(f"Percentage {percent:.0f}%")
+    print(f"Score      {score} / {total_question}")
+    print(f"Correct    {score}")
+    print(f"Incorrect  {incorrect}")

@@ -42,3 +42,4 @@ def load_default_questions():
 
     file = open("Questions_Default.json","r")
     questions = json.load(file)
+    file.close()
