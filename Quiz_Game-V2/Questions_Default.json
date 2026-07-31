@@ -1,0 +1,22 @@
+[
+    {
+        "question": "Minecraft is sandbox game?",
+        "choices": [
+            "Yes",
+            "No",
+            "Ok",
+            "Thank"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "Python is a programming language?",
+        "choices": [
+            "Yes",
+            "No",
+            "Banana",
+            "Maybe"
+        ],
+        "answer": 1
+    }
+]

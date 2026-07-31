@@ -4,6 +4,7 @@
 
 import ui
 import quiz
+import questions
 
 # === default variable === #
 
@@ -11,6 +12,8 @@ run = True
 
 # ===     main func    === #
 
+
+questions.load_file_questions()
 while run:
     ui.main_menu()
     main_menu_result = ui.ask_1(1,2,"func")
