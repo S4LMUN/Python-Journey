@@ -1,0 +1,3 @@
+# ---   character.py   --- #
+
+# === default variable === #
