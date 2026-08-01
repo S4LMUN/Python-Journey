@@ -11,4 +11,5 @@ class Character:
         self.name   = name
 
     def attack(self,object_name):
-        self
+        object_name.hp -= self.damage
+        print(f"{self.name} Attack {object_name.name} {self.damage} Damage")

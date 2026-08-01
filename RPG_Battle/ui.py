@@ -33,6 +33,17 @@ def confirm(text):
     return result
     
 
+def battle_ui(object_player,object_monster):
+    print()
+    print(" === BATTLE ===")
+    info(object_player)
+    info(object_monster)
+
+    print()
+    print("1) Attack")
+    result = ask_one(1,1)
+    print()
+    return result
 
 def info(object_name):
     print()

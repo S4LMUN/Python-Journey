@@ -17,7 +17,7 @@ while run:
         continue
     else:
         if select_result == 1:
-            control.battle_info()
+            control.battle()
         elif select_result == 2:
             confirm_result = ui.confirm("Exit")
             if confirm_result.lower() == "y":
