@@ -41,7 +41,9 @@ def battle_ui(object_player,object_monster):
 
     print()
     print("1) Attack")
-    result = ask_one(1,1)
+    print("2) Run")
+    print()
+    result = ask_one(1,2)
     print()
     return result
 
