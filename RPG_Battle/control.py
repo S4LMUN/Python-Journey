@@ -19,6 +19,18 @@ def battle():
         result = ui.battle_ui(player,monster)
         if result == 1:
             player.attack(monster)
+            if monster.hp <= 0:
+                print()
+                print(f"Monster : {monster.name} Die")
+                print(f"Player  : {player.name} Win")
+                break
+            else:
+                monster.attack(player)
+                if player.hp <= 0:
+                    print()
+                    print(f"Player  : {player.name} Die")
+                    print(f"Monster : {monster.name} Win")
+                    break
         else:
             print("Player run out of the battle")
             break
