@@ -10,6 +10,7 @@ My Python learning projects.
 - Quiz Game
 - Quiz Game V2
 - RPG Battle
+- RPG Battle V2
 
 Language:
 Python
