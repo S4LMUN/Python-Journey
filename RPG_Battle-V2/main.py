@@ -2,6 +2,7 @@
 
 # === import           === #
 
+import control
 import ui
 
 # === default variable === #
@@ -16,7 +17,7 @@ while run:
         continue
     else:
         if result == 1:
-            pass
+            control.battle()
         elif result == 2:
             confirm = ui.ask_confirm("Exit")
             if confirm.lower() == "y":

@@ -14,4 +14,29 @@ player  = Player("Josh",100)
 # === main func        === #
 
 def battle():
-    pass
+    player.hp = player.max_hp
+    monster.hp = monster.max_hp
+
+    while player.hp > 0 and monster.hp > 0:
+        result = ui.battle(player,monster)
+        if result is None:
+            continue
+        else:
+            if result == 1:
+                player_attack = player.attack()
+                monster.hp -= player_attack
+                if monster.hp <= 0:
+                    print()
+                    print("Monster Die")
+                else:
+                    pass
+            elif result == 2:
+                player_heal = player.heal()
+                print()
+                print(f"Player  : {player.name} heal {player_heal} Hp")
+                pass
+            elif result == 3:
+                confirm = ui.ask_confirm("Run")
+                if confirm == "y":
+                    print(f"Player : {player.name} Run out of the battle")
+                    break
