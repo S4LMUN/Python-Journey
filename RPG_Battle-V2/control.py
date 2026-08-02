@@ -29,14 +29,34 @@ def battle():
                 print(f"Player  : {player.name} Attack Monster {monster.name} {player_attack} Damage")
                 if monster.hp <= 0:
                     print()
-                    print("Monster Die")
+                    print(f"Monster : {monster.name} Die")
                 else:
-                    result = monster.chance()
+                    monster_result = monster.chance()
+                    value, action = monster_result
+                    if action == "Attack":
+                        player.hp -= value
+                        print(f"Monster : {monster.name} Attack Player {player.name} {value} Damage")
+                        if player.hp <= 0:
+                            print()
+                            print(f"Player  : {player.name} Die")
+                    elif action == "Heal":
+                        print(f"Monster : {monster.name} heal {value} Hp")
+
             elif result == 2:
                 player_heal = player.heal()
                 print()
                 print(f"Player  : {player.name} heal {player_heal} Hp")
-                pass
+                monster_result = monster.chance()
+                value, action = monster_result
+                if action == "Attack":
+                    player.hp -= value
+                    print(f"Monster : {monster.name} Attack Player {player.name} {value} Damage")
+                    if player.hp <= 0:
+                        print()
+                        print(f"Player  : {player.name} Die")
+                elif action == "Heal":
+                    print(f"Monster : {monster.name} heal {value} Hp")
+
             elif result == 3:
                 confirm = ui.ask_confirm("Run")
                 if confirm == "y":

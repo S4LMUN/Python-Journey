@@ -36,5 +36,5 @@ class Monster:
 
             elif select == 2:
                 result = self.heal()
-                return result ,"Attack"
+                return result ,"Heal"
             
