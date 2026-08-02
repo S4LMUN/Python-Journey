@@ -16,6 +16,8 @@ class Player:
 
     def attack(self):
         result = random.randint(1,5)
+        self.hp += result
+        self.hp = min(self.hp,self.max_hp)
         return result
 
     def heal(self):

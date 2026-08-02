@@ -20,4 +20,21 @@ class Monster:
 
     def heal(self):
         result = random.randint(1,3)
+        self.hp += result
+        self.hp = min(self.hp,self.max_hp)
         return result
+
+    def chance(self):
+        if self.hp >= self.max_hp - 10:
+            result = self.attack()
+            return result
+        else:
+            select = random.randint(1,2)
+            if select == 1:
+                result = self.attack()
+                return result
+
+            elif select == 2:
+                result = self.heal()
+                return result
+            
