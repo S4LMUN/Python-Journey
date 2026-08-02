@@ -43,22 +43,35 @@ def battle():
                         print(f"Monster : {monster.name} heal {value} Hp")
 
             elif result == 2:
-                player_heal = player.heal()
-                print()
-                print(f"Player  : {player.name} heal {player_heal} Hp")
-                monster_result = monster.chance()
-                value, action = monster_result
-                if action == "Attack":
-                    player.hp -= value
-                    print(f"Monster : {monster.name} Attack Player {player.name} {value} Damage")
-                    if player.hp <= 0:
-                        print()
-                        print(f"Player  : {player.name} Die")
-                elif action == "Heal":
-                    print(f"Monster : {monster.name} heal {value} Hp")
+                if player.hp == player.max_hp:
+                    print()
+                    print(f"Player  : {player.name} Is Full Hp can't heal")
+                    continue
+                else:
+                    player_heal = player.heal()
+                    print()
+                    print(f"Player  : {player.name} heal {player_heal} Hp")
+                    monster_result = monster.chance()
+                    value, action = monster_result
+                    if action == "Attack":
+                        player.hp -= value
+                        print(f"Monster : {monster.name} Attack Player {player.name} {value} Damage")
+                        if player.hp <= 0:
+                            print()
+                            print(f"Player  : {player.name} Die")
+                    elif action == "Heal":
+                        print(f"Monster : {monster.name} heal {value} Hp")
 
             elif result == 3:
                 confirm = ui.ask_confirm("Run")
                 if confirm == "y":
                     print(f"Player  : {player.name} Run out of the battle")
                     break
+
+    if player.hp <= 0:
+        print()
+        print(f"Monster : {monster.name} Win")
+
+    else:
+        print()
+        print(f"Player  : {player.name} Win")
