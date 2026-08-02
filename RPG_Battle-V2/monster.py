@@ -27,14 +27,14 @@ class Monster:
     def chance(self):
         if self.hp >= self.max_hp - 10:
             result = self.attack()
-            return result
+            return result, "Attack"
         else:
             select = random.randint(1,2)
             if select == 1:
                 result = self.attack()
-                return result
+                return result ,"Attack"
 
             elif select == 2:
                 result = self.heal()
-                return result
+                return result ,"Attack"
             
