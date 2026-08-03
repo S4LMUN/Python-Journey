@@ -34,4 +34,10 @@ class Monster:
         else:
             damage = self.attack()
             return damage
-        
+
+    def take_damage(self,damage):
+        self.hp -= damage
+        if self.hp <= 0:
+            return "death"
+        else:
+            return "alive"
