@@ -21,3 +21,17 @@ class Monster:
         self.hp += heal
         self.hp = min(self.hp,self.max_hp)
         return heal
+
+    def decide(self):
+        if self.hp < self.max_hp - 10:
+            result = random.randint(1,2)
+            if result == 1:
+                damage = self.attack()
+                return damage
+            elif result == 2:
+                heal = self.heal()
+                return heal
+        else:
+            damage = self.attack()
+            return damage
+        
