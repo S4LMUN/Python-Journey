@@ -9,7 +9,8 @@ def main_menu():
     print("1) PLAY")
     print("2) EXIT")
     print()
-    ask_menu(1,2,"Func")
+    result = ask_menu(1,2,"Func")
+    return result
 
 def ask_menu(low,high,text):
     try:

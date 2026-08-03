@@ -1,5 +1,9 @@
 # === main.py  === #
 
+# === import === #
+
+import ui
+
 # === default variable === #
 
 run = True
