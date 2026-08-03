@@ -21,3 +21,10 @@ class Player:
         self.hp += heal
         self.hp = min(self.hp,self.max_hp)
         return heal
+
+    def take_damage(self,damage):
+        self.hp -= damage
+        if self.hp <= 0:
+            return "death"
+        else:
+            return "alive"
