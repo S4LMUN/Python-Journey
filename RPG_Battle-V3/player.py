@@ -15,3 +15,9 @@ class Player:
     def attack(self):
         damage = random.randint(1,5)
         return damage
+
+    def heal(self):
+        heal = random.randint(4,7)
+        self.hp += heal
+        self.hp = min(self.hp,self.max_hp)
+        return heal
