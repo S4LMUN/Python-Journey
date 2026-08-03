@@ -24,7 +24,6 @@ class Player:
 
     def take_damage(self,damage):
         self.hp -= damage
+        self.hp = max(self.hp,0)
         if self.hp <= 0:
-            return "death"
-        else:
-            return "alive"
+            return self.hp > 0
