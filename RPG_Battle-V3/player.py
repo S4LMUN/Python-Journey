@@ -1,0 +1,9 @@
+# === player.py === #
+
+# === class === #
+
+class Player:
+    def __init__(self,name,hp):
+        self.name   = name
+        self.max_hp = hp
+        self.hp     = hp
