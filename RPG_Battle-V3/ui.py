@@ -2,6 +2,8 @@
 
 # === default variable === #
 
+# === main func === #
+
 def main_menu():
     print()
     print(" === RPG BATTLE Game ===")
@@ -23,3 +25,14 @@ def ask_menu(low,high,text):
     except ValueError:
         print("Value Error")
         return None
+
+def battle(player,monster):
+    print()
+    print(" === BATTLE ZONE ===")
+    print()
+    print(f"Player  : {player.name} | HP {player.hp}")
+    print(f"Monster : {monster.name} | HP {monster.hp}")
+
+def ask_confirm(text):
+    result = input(f" >> Confirm {text} y/n : ")
+    return result

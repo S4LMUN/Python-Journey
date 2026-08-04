@@ -3,6 +3,7 @@
 # === import === #
 
 import ui
+import battle
 
 # === default variable === #
 
@@ -16,6 +17,11 @@ while run:
         continue
     else:
         if result == 1:
-            pass
+            battle.start()
         elif result == 2:
-            pass
+            confirm = ui.ask_confirm("EXIT")
+            if confirm.lower() == "y":
+                print(" >>> Exit")
+                run = False
+            else:
+                continue
