@@ -32,6 +32,15 @@ def battle(player,monster):
     print()
     print(f"Player  : {player.name} | HP {player.hp}")
     print(f"Monster : {monster.name} | HP {monster.hp}")
+    print()
+    print(" === ACTION ZONE ===")
+    print()
+    print("1) ATTACK")
+    print("2) HEAL")
+    print("3) RUN")
+    print()
+    result = ask_menu(1,3,"Action")
+    return result
 
 def ask_confirm(text):
     result = input(f" >> Confirm {text} y/n : ")
