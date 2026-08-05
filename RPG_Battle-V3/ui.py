@@ -45,3 +45,17 @@ def battle(player,monster):
 def ask_confirm(text):
     result = input(f" >> Confirm {text} y/n : ")
     return result
+
+def heal_info(target,value):
+    print()
+    print(f"{target.name} | HEAL {value} HP")
+
+def attack_info(attacker,target,value):
+    print()
+    print(f"{attacker.name} ATTACK | {target.name} {value} HP")
+
+def not_allow(target):
+    print()
+    print(" === NOT ALLOW ===")
+    print()
+    print(f"CAN'T HEAL IF FULL HP {target.max_hp}")

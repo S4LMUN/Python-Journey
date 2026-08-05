@@ -23,9 +23,15 @@ def start():
         result = ui.battle(player,monster)
         if result == 1:
             player_damage = player.attack()
+            ui.attack_info(player,monster,player_damage)
             monster_alive = monster.take_damage(player_damage)
         elif result == 2:
             player_heal = player.heal()
+            if player_heal == 0:
+                ui.not_allow(player)
+                continue
+            else:
+                ui.heal_info(player,player_heal)
         elif result == 3:
             confirm = ui.ask_confirm("RUN")
             if confirm.lower() == "y":

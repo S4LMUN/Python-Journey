@@ -17,10 +17,13 @@ class Player:
         return damage
 
     def heal(self):
-        heal = random.randint(4,7)
-        self.hp += heal
-        self.hp = min(self.hp,self.max_hp)
-        return heal
+        if self.hp == self.max_hp:
+            return 0
+        else:
+            heal = random.randint(4,7)
+            self.hp += heal
+            self.hp = min(self.hp,self.max_hp)
+            return heal
 
     def take_damage(self,damage):
         self.hp -= damage
