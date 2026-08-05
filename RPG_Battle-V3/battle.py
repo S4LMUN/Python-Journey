@@ -23,15 +23,20 @@ def start():
         result = ui.battle(player,monster)
         if result == 1:
             player_damage = player.attack()
+            ui.battle_info()
             ui.attack_info(player,monster,player_damage)
             monster_alive = monster.take_damage(player_damage)
+            player_alive = monster_turn(player)
         elif result == 2:
             player_heal = player.heal()
             if player_heal == 0:
                 ui.not_allow(player)
                 continue
             else:
+                ui.battle_info()
                 ui.heal_info(player,player_heal)
+                player_alive = monster_turn(player)
+
         elif result == 3:
             confirm = ui.ask_confirm("RUN")
             if confirm.lower() == "y":
@@ -39,3 +44,14 @@ def start():
                 break
             else:
                 continue
+
+def monster_turn(player):
+    monster_result = monster.decide()
+    monster_action,monster_damage = monster_result
+    if monster_action == 1:
+        player_alive = player.take_damage(monster_damage)
+        ui.monster_ui(monster,monster_action,monster_damage,player)
+        return player_alive
+    else:
+        ui.monster_ui(monster,monster_action,monster_damage,player)
+        return True

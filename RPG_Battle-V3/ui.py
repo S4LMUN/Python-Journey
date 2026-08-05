@@ -47,15 +47,26 @@ def ask_confirm(text):
     return result
 
 def heal_info(target,value):
-    print()
     print(f"{target.name} | HEAL {value} HP")
 
 def attack_info(attacker,target,value):
-    print()
     print(f"{attacker.name} ATTACK | {target.name} {value} HP")
+
+def battle_info():
+    print()
+    print(" === BATTLE INFO ===")
+    print()
 
 def not_allow(target):
     print()
     print(" === NOT ALLOW ===")
     print()
     print(f"CAN'T HEAL IF FULL HP {target.max_hp}")
+
+def monster_ui(monster,actions,number,player):
+    action = actions        
+    value = number
+    if action == 1:
+        attack_info(monster,player,value)
+    elif action == 2:
+        heal_info(monster,value)
