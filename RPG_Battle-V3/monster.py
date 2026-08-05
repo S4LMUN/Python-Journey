@@ -27,13 +27,13 @@ class Monster:
             result = random.randint(1,2)
             if result == 1:
                 damage = self.attack()
-                return damage
+                return 1, damage
             elif result == 2:
                 heal = self.heal()
-                return heal
+                return 2,heal
         else:
             damage = self.attack()
-            return damage
+            return 1,damage
 
     def take_damage(self,damage):
         self.hp -= damage
