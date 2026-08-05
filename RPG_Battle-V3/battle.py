@@ -44,6 +44,11 @@ def start():
                 break
             else:
                 continue
+    
+    if player_alive == False:
+        ui.winner(monster,"MONSTER")
+    else:
+        ui.winner(player,"PLAYER")
 
 def monster_turn(player):
     monster_result = monster.decide()

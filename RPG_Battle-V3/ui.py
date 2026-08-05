@@ -70,3 +70,9 @@ def monster_ui(monster,actions,number,player):
         attack_info(monster,player,value)
     elif action == 2:
         heal_info(monster,value)
+
+def winner(entity,text):
+    print()
+    print(" === WINNER ===")
+    print()
+    print(f"{text} | {entity.name}")
