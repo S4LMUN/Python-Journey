@@ -40,7 +40,7 @@ def start():
         elif result == 3:
             confirm = ui.ask_confirm("RUN")
             if confirm.lower() == "y":
-                print(F" >>> PLAYER {player.name} | RUN OUT OF THE BATTLE")
+                print(f" >>> PLAYER {player.name} | RUN OUT OF THE BATTLE")
                 break
             else:
                 continue
