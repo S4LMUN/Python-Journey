@@ -46,9 +46,9 @@ def start():
                 continue
     
     if player_alive == False:
-        ui.winner(monster,"MONSTER")
+        ui.win_lose(monster,"MONSTER",player,"PLAYER")
     else:
-        ui.winner(player,"PLAYER")
+        ui.win_lose(player,"PLAYER",monster,"MONSTER")
 
 def monster_turn(player):
     monster_result = monster.decide()
