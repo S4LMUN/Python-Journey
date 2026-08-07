@@ -12,6 +12,7 @@ My Python learning projects.
 - RPG Battle
 - RPG Battle V2
 - RPG Battle V3
+- RPG Battle V4
 
 Language:
 Python
