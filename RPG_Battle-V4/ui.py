@@ -13,7 +13,7 @@ def main_menu():
     print("1) Battle")
     print("2) Exit")
     print()
-    result = ask_menu(1,2,"Choice")
+    result = ask_menu(1,2,"choice")
     return result
 
 def ask_menu(low,high,text):
@@ -27,3 +27,23 @@ def ask_menu(low,high,text):
     except ValueError:
         print("Value Error")
         return None
+
+def ask_confirm(text):
+    result = input(f" >> Confirm {text} y/n : ")
+    return result
+
+def battle(player,monster):
+    print()
+    print(" === BATTLE INFO ===")
+    print()
+    print(f"Player  | {player.name}  | Hp {player.hp}")
+    print(f"Monster | {monster.name} | Hp {monster.hp}")
+    print()
+    print(" === ACTION MENU ===")
+    print()
+    print("1) Attack")
+    print("2) Heal")
+    print("3) Run")
+    print()
+    result = ask_menu(1,3,"action")
+    return result
