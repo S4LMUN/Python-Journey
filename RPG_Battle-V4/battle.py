@@ -24,7 +24,7 @@ def start():
     while player_alive and monster_alive:
         player_action = ui.battle(player,monster)
         if player_action == 1:
-            pass
+            monster_alive = player.attack(monster)
         elif player_action == 2:
             pass
         elif player_action == 3:
