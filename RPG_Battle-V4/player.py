@@ -2,6 +2,8 @@
 
 # === import === #
 
+import random
+
 # === default variable === # 
 
 # === main class === #
@@ -14,3 +16,13 @@ class Player:
 
     def reset(self):
         self.hp = self.max_hp
+
+    def attack(self,target):
+        damage = random.randint(1,7)
+        result = target.take_damage(damage)
+        return result
+
+    def take_damage(self,damage):
+        self.hp -= damage
+        self.hp = max(self.hp,0)
+        return self.hp > 0
