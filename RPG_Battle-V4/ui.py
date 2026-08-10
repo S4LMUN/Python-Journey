@@ -47,3 +47,14 @@ def battle(player,monster):
     print()
     result = ask_menu(1,3,"action")
     return result
+
+def attack(entity,damage,target):
+    print(f"{entity.name} Attack {target.name} {damage} Hp")
+
+def heal(entity,heal):
+    print(f"{entity.name} Heal {heal} Hp")
+
+def action():
+    print()
+    print(" === ACTION INFO ===")
+    print()

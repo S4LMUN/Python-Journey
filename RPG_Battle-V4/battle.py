@@ -25,12 +25,16 @@ def start():
         player_action = ui.battle(player,monster)
         if player_action == 1:
             monster_alive,player_damage = player.attack(monster)
+            ui.action()
+            ui.attack(player,player_damage,monster)
             if monster_alive is False:
                 break
             else:
                 monster # Do this
         elif player_action == 2:
-            player.heal()
+            player_heal = player.heal()
+            ui.action()
+            ui.heal(player,player_heal)
         elif player_action == 3:
             confirm = ui.ask_confirm("run")
             if confirm.lower() == "y":
