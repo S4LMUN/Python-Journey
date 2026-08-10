@@ -31,3 +31,4 @@ class Player:
         heal = random.randint(1,12)
         self.hp += heal
         self.hp = min(self.hp,self.max_hp)
+        return heal
