@@ -31,6 +31,17 @@ class Monster:
         heal = random.randint(5,9)
         self.hp += heal
         self.hp = min(self.hp,self.max_hp)
+        return heal
 
     def decided(self,target):
-        pass # Do this
+        if self.hp >= self.max_hp - 10:
+            result, damage = self.attack(target)
+            return result, damage, 1
+        else:
+            action = random.randint(1,2)
+            if action == 1:
+                result, damage = self.attack(target)
+                return result, damage, 1
+            elif action == 2:
+                result = self.heal()
+                return target.hp > 0,result, 2
