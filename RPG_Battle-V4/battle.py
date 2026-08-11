@@ -30,7 +30,8 @@ def start():
             if monster_alive is False:
                 break
             else:
-                monster # Do this
+                player_alive, monster_value, action = monster.decided(player)
+                # show monster action
         elif player_action == 2:
             player_heal = player.heal()
             ui.action()
