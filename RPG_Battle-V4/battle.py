@@ -32,8 +32,8 @@ def start():
                 player_alive, monster_value, monster_action = monster.decided(player)
                 monster_turn(monster,monster_action,monster_value,player)    
         elif player_action == 2:
-            if player.hp < player.max_hp: # player should setting him self setting in player_heal
-                player_heal = player.heal()
+            player_heal,player_decided = player.heal()
+            if player_decided:
                 player_turn(player,player_heal,monster,2)
                 player_alive, monster_value, monster_action = monster.decided(player)
                 monster_turn(monster,monster_action,monster_value,player)
