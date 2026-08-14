@@ -28,7 +28,10 @@ class Player:
         return self.hp > 0
 
     def heal(self):
-        heal = random.randint(1,12)
-        self.hp += heal
-        self.hp = min(self.hp,self.max_hp)
-        return heal
+        if self.hp < self.max_hp:
+            heal = random.randint(1,12)
+            self.hp += heal
+            self.hp = min(self.hp,self.max_hp)
+            return heal,True
+        else:
+            return 0,False
