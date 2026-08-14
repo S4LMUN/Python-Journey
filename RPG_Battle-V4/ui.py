@@ -59,21 +59,31 @@ def action():
     print(" === ACTION INFO ===")
     print()
 
-def winner(player_alive,player,monster):
+def winner(player_alive,player,monster,monster_alive):
     print()
     print(" === BATTLE RESULT ===")
-    if player_alive == True:
+    if player_alive and monster_alive:
+        print()
+        print("GAME DRAW")
+    elif player_alive == True:
         print()
         print(f"Player  | {player.name}  Win")
         print(f"Monster | {monster.name} Lose")
 
-    else :
+    elif monster_alive == True:
         print()
         print(f"Monster | {monster.name} Win")
-        print(f"Player  | {player.name}  Lose")        
+        print(f"Player  | {player.name}  Lose")    
+        
 
 def cannot(entity,do):
     print()
     print(" === CAN'T DO IT ===")
     print()
     print(f"{entity.name} can't {do}")
+
+def run_out(player):
+    print()
+    print(" === RUNNING ===")
+    print()
+    print(f"PLAYER  | {player.name} RUN OUT OF THE BATTLE")
