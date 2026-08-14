@@ -32,7 +32,7 @@ def start():
                 player_alive, monster_value, monster_action = monster.decided(player)
                 monster_turn(monster,monster_action,monster_value,player)    
         elif player_action == 2:
-            if player.hp < player.max_hp:
+            if player.hp < player.max_hp: # player should setting him self setting in player_heal
                 player_heal = player.heal()
                 player_turn(player,player_heal,monster,2)
                 player_alive, monster_value, monster_action = monster.decided(player)
@@ -42,13 +42,10 @@ def start():
         elif player_action == 3:
             confirm = ui.ask_confirm("run")
             if confirm.lower() == "y":
-                print()
-                print(" === RUNNING ===")
-                print()
-                print(f"PLAYER  | {player.name} RUN OUT OF THE BATTLE")
+                ui.run_out(player)
                 break
 
-    ui.winner(player_alive,player,monster)
+    ui.winner(player_alive,player,monster,monster_alive)
 
 def monster_turn(monster,monster_action,monster_value,target):
     if monster_action == 1:
