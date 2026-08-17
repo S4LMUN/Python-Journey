@@ -12,7 +12,8 @@ def main_menu():
     print("6) Save   Task")
     print("7) Exit")
     print()
-    ask_menu(1,7,"Func")
+    selection = ask_menu(1,7,"Func")
+    return selection
 
 def ask_menu(low,high,text):
     try:
@@ -21,6 +22,8 @@ def ask_menu(low,high,text):
             return result
         else:
             print("Invalid Value")
+            return None
 
     except ValueError:
         print("Value Error")
+        return None

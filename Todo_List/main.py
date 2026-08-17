@@ -2,7 +2,7 @@
 
 # import #
 
-import ui
+import control
 
 # default value #
 
@@ -10,6 +10,4 @@ run = True
 
 # mainfunc #
 
-while run:
-    ui.main_menu()
-    
+control.start(run)
