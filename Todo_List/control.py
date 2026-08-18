@@ -11,7 +11,8 @@ def start(run):
     todo = Todo()
     while run:
         selection = ui.main_menu()
-        func_run = checkfunc(selection,todo)
+        run = checkfunc(selection,todo)
+        
 
 def checkfunc(selection,todo):
     if selection == 1: # add task
@@ -30,6 +31,6 @@ def checkfunc(selection,todo):
     elif selection == 6:
         return True
     elif selection == 7:
-        return True
+        return False
     else:
-        return False # This for function run variable#
+        return True
