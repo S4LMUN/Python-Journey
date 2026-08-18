@@ -27,3 +27,11 @@ def ask_menu(low,high,text):
     except ValueError:
         print("Value Error")
         return None
+
+def add_task():
+    new_task = input(" >> New task name: ")
+    if new_task.strip() == "":
+        return None
+    else:
+        return new_task
+
