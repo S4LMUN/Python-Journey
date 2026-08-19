@@ -11,10 +11,16 @@ class Todo:
         else:
             self.list.append(new_task)
 
-    def show_task(self,todo):
+    def show_task(self):
         print()
-        if not todo.list:
+        if not self.list:
             print("You don't have any task")
         else:
             for index,task in enumerate(self.list, start = 1):
                 print(f"{index}) {task}")
+
+    def delete_task(self,task):
+        self.list.pop(task)
+
+    def clear_task(self):
+        self.list.clear()
