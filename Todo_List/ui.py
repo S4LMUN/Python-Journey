@@ -12,19 +12,21 @@ def main_menu():
     print("6) Save   Task")
     print("7) Exit")
     print()
-    selection = ask_menu(1,7,"Func")
+    selection = ask_menu(1,7,"Func",1)
     return selection
 
-def ask_menu(low,high,text):
+def ask_menu(low,high,text,state):
     try:
-        result = int(input(f" > Select {text} : "))
+        result = int(input(f" {">" * state} Select {text} : "))
         if low <= result <= high:
             return result
         else:
+            print()
             print("Invalid Value")
             return None
 
     except ValueError:
+        print()
         print("Value Error")
         return None
 
@@ -36,6 +38,31 @@ def add_task():
         return new_task
 
 def confirm(state,text):
-    confirm = input(f" {">" * state} Confirm {text} : ")
+    confirm = input(f" {">" * state} confirm {text} : ")
     return confirm
 
+def ask_task(todo):
+    try:
+        select = int(input(" >>> Select task : "))
+        select -= 1
+        if 0 <= select < len(todo.list):
+            return select
+        else:
+            print()
+            print(f"No task number {select + 1}")
+            return None
+
+    except ValueError:
+        print()
+        print("Value Error")
+
+def delete_menu():
+    print()
+    print(" === DELETE MENU ===")
+    print()
+    print("1) Select Task")
+    print("2) Clear  Task")
+    print("3) Exit   Menu")
+    print()
+    result = ask_menu(1,3,"Func",2)
+    return result
