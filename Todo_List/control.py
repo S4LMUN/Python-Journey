@@ -11,10 +11,10 @@ def start(run):
     todo = Todo()
     while run:
         selection = ui.main_menu()
-        run = checkfunc(selection,todo)
+        run = check_func(selection,todo)
         
 
-def checkfunc(selection,todo):
+def check_func(selection,todo):
     if selection == 1: # add task
         new_task = ui.add_task()
         todo.add_task(new_task)
@@ -31,6 +31,24 @@ def checkfunc(selection,todo):
     elif selection == 6:
         return True
     elif selection == 7:
+        result = confirm(2,"Exit")
+        return result
+    else:
+        return True
+
+def check_confirm(result):
+    if result.lower() == "y":
+        return True
+    else:
+        return False
+
+def confirm(state,text):
+    result = ui.confirm(state,text)
+    confirm = check_confirm(result)
+    if confirm:
+        print()
+        print(f"User {text}")
+        print() # ADD auto save task #
         return False
     else:
         return True
