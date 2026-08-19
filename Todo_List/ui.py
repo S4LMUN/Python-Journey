@@ -35,3 +35,7 @@ def add_task():
     else:
         return new_task
 
+def confirm(state,text):
+    confirm = input(f" {">" * state} Confirm {text} : ")
+    return confirm
+
