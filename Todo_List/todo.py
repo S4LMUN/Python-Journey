@@ -24,3 +24,12 @@ class Todo:
 
     def clear_task(self):
         self.list.clear()
+
+    def is_list(self):
+        if not self.list:
+            print()
+            print("You don't have any task")
+            return False
+        else:
+            return True
+
