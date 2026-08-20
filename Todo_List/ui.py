@@ -30,8 +30,8 @@ def ask_menu(low,high,text,state):
         print("Value Error")
         return None
 
-def add_task():
-    new_task = input(" >> New task name: ")
+def add_task(state,text):
+    new_task = input(f" {'>' * state} {text}: ")
     if new_task.strip() == "":
         return None
     else:
@@ -41,9 +41,9 @@ def confirm(state,text):
     confirm = input(f" {">" * state} confirm {text} : ")
     return confirm
 
-def ask_task(todo):
+def ask_task(state,todo):
     try:
-        select = int(input(" >>> Select task : "))
+        select = int(input(f" {">" * state} Select task : "))
         select -= 1
         if 0 <= select < len(todo.list):
             return select

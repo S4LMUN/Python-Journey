@@ -16,7 +16,7 @@ def start(run):
 
 def check_func(selection,todo):
     if selection == 1: # add task
-        new_task = ui.add_task()
+        new_task = ui.add_task(2,"New task name ")
         todo.add_task(new_task)
         return True
     elif selection == 2: # delete task
@@ -29,7 +29,12 @@ def check_func(selection,todo):
     elif selection == 3:
         return True
     elif selection == 4:
-        return True
+        result = todo.is_list()
+        if result is False:
+            return True
+        else:
+            edit(todo)
+            return True
     elif selection == 5: # show task
         todo.show_task()
         return True
@@ -57,6 +62,16 @@ def confirm(state,text):
     else:
         return True
 
+def edit(todo):
+    task = ui.ask_task(2,todo)
+    if task is None:
+        return True
+    else:
+        edited = ui.add_task(3,f"Edit {todo.list[task]} task to ")
+        if edit is None:
+            return True
+        else:
+            todo.edit_task(task,edited)
 
 def delete_menu(todo):
     select = ui.delete_menu()
@@ -64,11 +79,11 @@ def delete_menu(todo):
         return True
     else:
         if select == 1:
-            task = ui.ask_task(todo)
+            task = ui.ask_task(3,todo)
             if task is None:
                 return True
             else:
-                unconfirm_delete = confirm(4,f"delete {todo.list[task]}")
+                unconfirm_delete = confirm(4,f"delete {todo.list[task]} task")
                 if not unconfirm_delete:
                     todo.delete_task(task)
                     return True

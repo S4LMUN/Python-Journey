@@ -25,6 +25,9 @@ class Todo:
     def clear_task(self):
         self.list.clear()
 
+    def edit_task(self,task,edited):
+        self.list[task] = edited
+
     def is_list(self):
         if not self.list:
             print()
