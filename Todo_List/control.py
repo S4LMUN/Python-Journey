@@ -20,27 +20,19 @@ def check_func(selection,todo):
         todo.add_task(new_task)
         return True
     elif selection == 2: # delete task
-        result = todo.is_list()
-        if result is False:
-            return True
-        else:
-            delete_menu(todo)
-            return True
-    elif selection == 3:
+        in_program = run_func(todo,delete_menu)
+        return in_program
+    elif selection == 3: # mark task
         return True
-    elif selection == 4:
-        result = todo.is_list()
-        if result is False:
-            return True
-        else:
-            edit(todo)
-            return True
+    elif selection == 4: # edit task
+        in_program = run_func(todo,edit)
+        return in_program
     elif selection == 5: # show task
         todo.show_task()
         return True
-    elif selection == 6:
+    elif selection == 6: # delete task
         return True
-    elif selection == 7:
+    elif selection == 7: # exit
         result = confirm(2,"Exit")
         return result
     else:
@@ -68,10 +60,11 @@ def edit(todo):
         return True
     else:
         edited = ui.add_task(3,f"Edit {todo.list[task]} task to ")
-        if edit is None:
+        if edited is None:
             return True
         else:
             todo.edit_task(task,edited)
+            return True
 
 def delete_menu(todo):
     select = ui.delete_menu()
@@ -104,3 +97,12 @@ def delete_menu(todo):
             print()
             print("Exit delete menu")
             return True
+
+def run_func(todo,func):
+    if not todo.list:
+        print()
+        print("You don't have any task")
+        return True
+    else:
+        func(todo)
+        return True
