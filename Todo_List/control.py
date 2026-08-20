@@ -20,13 +20,12 @@ def check_func(selection,todo):
         todo.add_task(new_task)
         return True
     elif selection == 2: # delete task
-        if not todo.list:
-            print()
-            print("You don't have any task")
+        result = todo.is_list()
+        if result is False:
             return True
         else:
             delete_menu(todo)
-        return True
+            return True
     elif selection == 3:
         return True
     elif selection == 4:
@@ -54,7 +53,6 @@ def confirm(state,text):
     if confirm:
         print()
         print(f"User {text}")
-        print() # ADD auto save task #
         return False
     else:
         return True
@@ -70,8 +68,8 @@ def delete_menu(todo):
             if task is None:
                 return True
             else:
-                delete = confirm(3,f"delete {todo.list[task]}")
-                if not delete:
+                unconfirm_delete = confirm(4,f"delete {todo.list[task]}")
+                if not unconfirm_delete:
                     todo.delete_task(task)
                     return True
                 else:
@@ -79,8 +77,8 @@ def delete_menu(todo):
                     print("Nothing happen")
                     return True
         elif select == 2:
-            delete = confirm(3,f"delete clear all task")
-            if not delete:
+            unconfirm_delete = confirm(4,f"delete clear all task")
+            if not unconfirm_delete:
                 todo.clear_task()
                 return True
             else:
