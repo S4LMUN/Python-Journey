@@ -13,11 +13,8 @@ class Todo:
 
     def show_task(self):
         print()
-        if not self.list:
-            print("You don't have any task")
-        else:
-            for index,task in enumerate(self.list, start = 1):
-                print(f"{index}) {task}")
+        for index,task in enumerate(self.list, start = 1):
+            print(f"{index}) {task}")
 
     def delete_task(self,task):
         self.list.pop(task)
@@ -28,6 +25,17 @@ class Todo:
     def edit_task(self,task,edited):
         self.list[task] = edited
 
+    def mark_task(self,task):
+        if "[✔] " not in self.list[task]:
+            print()
+            print(f"[✔] task {self.list[task]}")
+
+            marked = self.list[task]
+            self.list[task] = "[✔] " + marked
+        else:
+            print()
+            print(f"{task + 1}) {self.list[task]} finished already")
+            
     def is_list(self):
         if not self.list:
             print()
