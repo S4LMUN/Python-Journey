@@ -9,11 +9,11 @@ from todo import Todo
 
 def start(run):
     todo = Todo()
+    todo.load()
     while run:
         selection = ui.main_menu()
         run = check_func(selection,todo)
         
-
 def check_func(selection,todo):
     if selection == 1: # add task
         in_program = add_task(todo)
@@ -31,9 +31,11 @@ def check_func(selection,todo):
         in_program = run_func(todo,show)
         return in_program
     elif selection == 6: # save task
-        return True
+        in_program = run_func(todo,save)
+        return in_program
     elif selection == 7: # exit
         in_program = confirm(2,"Exit")
+        run_func(todo,save)
         return in_program
     else:
         return True
@@ -112,6 +114,9 @@ def add_task(todo):
 
 def show(todo):
     todo.show_task()
+
+def save(todo):
+    todo.save()
 
 def run_func(todo,func):
     if not todo.list:

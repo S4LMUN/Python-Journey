@@ -44,3 +44,34 @@ class Todo:
         else:
             return True
 
+    def load(self):
+        try:
+            file = open("todo.txt", "r")
+            tasks = file.readlines()
+            if tasks:
+                for task in tasks:
+                    if task.strip() == "":
+                        continue
+                    else:
+                        print(f"Import task {task}")
+                        self.list.append(task)
+            else:
+                print()
+                print(" === No task in todo.txt ===")
+
+        except FileNotFoundError:
+            print()
+            print(" === No task to import ===")
+            file = open("todo.txt", "w")
+        
+        file.close()
+
+    def save(self):
+        print(" === Save Task ===")
+        print()
+        file = open("todo.txt","w")
+        for task in self.list:
+            print(f"Write task {task} to todo.txt")
+            file.write(task + "\n")
+        print()
+        print("Save success full")
