@@ -18,7 +18,7 @@ My Python learning projects.
 - Rename Mini Project # 2026-08-15
 
 - 10 Todolist
-- 11 Todolist v2
+- 11 Pokemon API
 
 Language:
 Python
