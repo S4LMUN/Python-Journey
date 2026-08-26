@@ -12,4 +12,10 @@ def start():
             continue
         else:
             response = requests.get(url)
-            print(response.status_code)
+            data = response.json()
+            print(data["name"])
+            print(data["id"])
+            print(data["height"])
+            print(data["weight"])
+            print(data.keys())
+            print(type(data["types"]))
