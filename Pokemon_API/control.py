@@ -16,7 +16,10 @@ def start():
             if response.status_code == 200:
                 data = response.json()
                 print()
-                print(data["name"])
+                print(f"Name   : {data["name"]}")
+                print(f"ID     : {data["id"]}")
+                print(f"Height : {data["height"]}")
+                print(f"Weight : {data["weight"]}")
             else:
                 print(f"No info about pokemon {pokemon}")
                 continue
