@@ -5,17 +5,19 @@ import requests
 
 def start():
     run = True
-    url = "https://pokeapi.co/api/v2/pokemon/pikachu"
+    main_url = "https://pokeapi.co/api/v2/pokemon/"
     while run:
         pokemon = ui.main_menu()
         if pokemon is None:
             continue
         else:
+            url = main_url + pokemon
             response = requests.get(url)
-            data = response.json()
-            print(data["name"])
-            print(data["id"])
-            print(data["height"])
-            print(data["weight"])
-            print(data.keys())
-            print(type(data["types"]))
+            if response.status_code == 200:
+                data = response.json()
+                print()
+                print(data["name"])
+            else:
+                print(f"No info about pokemon {pokemon}")
+                continue
+
