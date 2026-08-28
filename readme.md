@@ -19,7 +19,8 @@ My Python learning projects.
 
 - 10 Todolist
 - 11 Pokemon API
-- 12 Pokemon API v2
+
+- Break Project 2026-08-28
 
 Language:
 Python
