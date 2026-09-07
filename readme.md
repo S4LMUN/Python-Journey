@@ -13,15 +13,8 @@ My Python learning projects.
 - 07 RPG Battle v2
 - 08 RPG Battle v3
 - 09 RPG Battle v4
-
-- Change Os from window to linux # 2026-08-15
-- Rename Mini Project # 2026-08-15
-
 - 10 Todolist
 - 11 Pokemon API
-
-- Break Project 2026-08-28
-- Change Os
 
 Language:
 Python
